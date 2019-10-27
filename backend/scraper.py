@@ -21,46 +21,33 @@ class TwitterScraper(Scraper):
         page = requests.get(url, headers=headers)
         soup = BeautifulSoup(page.content, 'html.parser')
 
+        contents = soup.findAll("div", class_="content")
 
-        # screens = soup.findAll("strong", class_="fullname show-popup-with-id u-textTruncate")
-        # users = soup.findAll("span", class_="username u-dir u-textTruncate")
-        # dates = soup.findAll()
-        # links = soup.findAll()
-        tweets = soup.findAll("p", class_="TweetTextSize js-tweet-text tweet-text")
+        examples = []
+        for content in contents:
+            tweet = content.find("p", class_="TweetTextSize js-tweet-text tweet-text")
+            date = content.find("span", class_="_timestamp js-short-timestamp")
+            user = content.find("span", class_="username u-dir u-textTruncate")
+            screen = content.find("strong", class_="fullname show-popup-with-id u-textTruncate")
 
-        return {
-            "screen_name": 'unk',
-            "user_name": 'unk',
-            "tweet": random.choice(tweets).get_text().strip(),
-            "date": 'today',
-            "url": 'n/a'
-        }
+            if not tweet or not user:
+                continue
+            else:
+                examples.append({
+                    "screen_name": screen.get_text().strip() if screen else user.get_text().strip(),
+                    "user_name": user.get_text().strip(),
+                    "tweet": tweet.get_text().strip(),
+                    "date": date.get_text().strip() if date else "unavaliable",
+                    "url": url
+                })
 
+        if not examples:
+            return {
+                "screen_name": "nofound!",
+                "user_name": "nofound!",
+                "tweet": "nofound!",
+                "date": "nofound!",
+                "url": url
+            }
 
-        # for tweet in tweets:
-        #     print()
-        #     print()
-        #     print("TWEEEEEEEET:\n", tweet)
-        #     print("REEEEEEEEEEEE\n", tweet.get_text())
-
-
-        # content = [{
-        #     "screen_name": screen,
-        #     "user_name": user,
-        #     "tweet": tweet,
-        #     "date": date,
-        #     "url": link
-        # } for screen, user, tweet, date, link in zip(screens, users, tweets, dates, links)]
-        # content = soup.findAll("div", class_="content")
-        # for c in content:
-        #     c = BeautifulSoup(c, 'html.parser')
-        #     name = 
-        #     print(name)
-        # name = soup.findAll("span", class_"FullNameGroup")
-
-        # print(content[0])
-        # print(len(content))
-        
-if __name__ == "__main__":
-    scrap = TwitterScraper()
-    scrap.scrape("jetblue")
+        return random.choice(examples)
