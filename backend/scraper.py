@@ -38,7 +38,7 @@ class TwitterScraper(Scraper):
                     "user_name": user.get_text().strip(),
                     "tweet": tweet.get_text().strip(),
                     "date": date.get_text().strip() if date else "unavaliable",
-                    "url": url
+                    "url": "twitter"
                 })
 
         if not examples:
@@ -47,7 +47,7 @@ class TwitterScraper(Scraper):
                 "user_name": "nofound!",
                 "tweet": "nofound!",
                 "date": "nofound!",
-                "url": url
+                "url": "twitter"
             }
 
         return random.choice(examples)
