@@ -8,7 +8,25 @@
     <title>inFlightful Dashboard</title>
     <link rel="stylesheet" href="/public/css/bulma.css">
     <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#3273dc">
 </head>
+
 <body>
     <nav class="navbar is-link">
         <div class="container">
@@ -41,105 +59,108 @@
     <div class="container is-fluid top-container">
         <div class="columns">
             <div class="column tweet-header is-one-quarter dash-header">
-            <h1 class="has-text-centered title">Recent tweets</h1>
-            <h1 class="has-text-centered subtitle">customer sentiments</h1>
-            <div id="tweetList" class="card-holder">
-            </div>
+                <h1 class="has-text-centered title">Recent tweets</h1>
+                <h1 class="has-text-centered subtitle">customer sentiments</h1>
+                <div id="tweetList" class="card-holder">
+                </div>
             </div>
             <div class="column is-half dash-header">
 
-                    <h1 class="has-text-centered title ">Sentiments over time</h1>
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                <h1 class="has-text-centered title ">Sentiments over time</h1>
+                <canvas id="myChart" width="400" height="400"></canvas>
             </div>
             <div class="column is-one-quarter dash-header">
                 <h1 class="has-text-centered title">Entry form</h1>
                 <form id="contactForm">
-                <div class="field">
-                    <label class="label">Screen Name</label>
-                    <div class="control has-icons-left has-icons-right">
-                        <input class="input is-success" id="screen_name" type="text" placeholder="@">
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-user"></i>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label class="label">User Name</label>
-                    <div class="control has-icons-left has-icons-right">
-                        <input class="input" type="text" id="user_name" placeholder="Name" value="">
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-envelope"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">Date</label>
-                    <div class="control has-icons-left has-icons-right">
-                        <input class="input" type="text" id="date" placeholder="DD-MM-YYYY" value="">
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-calendar"></i>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label class="label">Tweet</label>
-                    <div class="control">
-                        <textarea class="textarea" id="tweet" placeholder="Tweet contents"></textarea>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label class="label">Link</label>
-                    <div class="control has-icons-left has-icons-right">
-                        <input class="input" id="link" type="text" placeholder="https://" value="">
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-link"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="field is-grouped bottomBtnsHolder">
-                    <div class="control bottomBtnsHolder">
-                        <button type="submit" id="submitBtn" class="button is-info is-fullwidth">Submit</button>
-                    </div>
-                </div>
-                
-                    
-            </form>
-            <div class="container btn-header is-centered">
-                
-                    <div class="field is-grouped">
-                        <div class="control bottomBtnsHolder">
-                                <form id="Jetblue">
-                            <button type="submit" id="submitBtnJetblue" class="button bottomBtns is-fullwidth is-link">Jetblue</button>                </form>
-                            <form id="WestJet">
-                            <button type="submit" id="submitBtnWestjet" class="button bottomBtns is-fullwidth is-primary">WestJet</button> </form>
-                            <form id="AirCanada">
-                            <button type="submit" id="submitBtnAircanada" class="button bottomBtns is-fullwidth is-danger">Air Canada</button></form>
+                    <div class="field">
+                        <label class="label">Screen Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" id="screen_name" type="text" placeholder="@">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
                         </div>
                     </div>
-            </div>
+
+                    <div class="field">
+                        <label class="label">User Name</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" type="text" id="user_name" placeholder="Name" value="">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Date</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" type="text" id="date" placeholder="DD-MM-YYYY" value="">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Tweet</label>
+                        <div class="control">
+                            <textarea class="textarea" id="tweet" placeholder="Tweet contents"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Link</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" id="link" type="text" placeholder="https://" value="">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-link"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field is-grouped bottomBtnsHolder">
+                        <div class="control bottomBtnsHolder">
+                            <button type="submit" id="submitBtn" class="button is-info is-fullwidth">Submit</button>
+                        </div>
+                    </div>
+
+
+                </form>
+                <div class="container btn-header is-centered">
+
+                    <div class="field is-grouped">
+                        <div class="control bottomBtnsHolder">
+                            <form id="Jetblue">
+                                <button type="submit" id="submitBtnJetblue"
+                                    class="button bottomBtns is-fullwidth is-link">Jetblue</button> </form>
+                            <form id="WestJet">
+                                <button type="submit" id="submitBtnWestjet"
+                                    class="button bottomBtns is-fullwidth is-primary">WestJet</button> </form>
+                            <form id="AirCanada">
+                                <button type="submit" id="submitBtnAircanada"
+                                    class="button bottomBtns is-fullwidth is-danger">Air Canada</button></form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
-     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
 
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
     <script src="https://kit.fontawesome.com/6fdc17c50a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0/dist/Chart.min.js"></script>
     <script src="public/js/script.js"></script>
 
     <script>
-        
+
     </script>
 </body>
 
