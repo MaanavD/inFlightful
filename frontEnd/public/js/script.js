@@ -311,7 +311,13 @@ var chart = new Chart(ctx, {
     }
   }
 });
+window.onload = my_function();
+async function my_function(){
+  const response = await fetch('https://hackathons-1569045593351.appspot.com/jetblue');
+  await response.json().then(data => saveTweet(data.tweet, data.screen_name, data.user_name, data.date, data.url, data.analysis, data.airline));
 
+  updateChart();
+}
 function updateChart() {
   chart.data.datasets[0].data[0] = jetblueCounter[0];
   chart.data.datasets[0].data[1] = jetblueCounter[1];
