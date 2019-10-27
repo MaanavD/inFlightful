@@ -1,3 +1,18 @@
 html{
     overflow: hidden;
 }
+.dash-header{
+    padding-top: 2%;
+}
+.btn-header{
+    padding-top: 10%;
+}
+.tweet-header{
+    overflow: auto;
+}
+.fixed-text{
+    position:fixed;
+}
+.card-holder{
+    height: 600px !important;
+}
