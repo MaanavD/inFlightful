@@ -17,3 +17,15 @@ html{
 .card-holder{
     height: 600px !important;
 }
+.bottomBtns{
+    margin-top: 15px;
+}
+.bottomBtnsHolder{
+    width: 100%;
+}
+
+@media (max-width: 1023px){
+    html{
+        overflow: visible;
+    }
+}

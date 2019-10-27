@@ -197,6 +197,9 @@ function submitForm(e) {
     .then(data => saveTweet(tweet, screen_name, user_name, date, url, data, "jetblue"));
   // var obj = JSON.parse(analysis);
   // 
+  var jetblueCounter = [0, 0, 0];
+var westjetCounter = [0, 0, 0];
+var aircanadaCounter = [0, 0, 0];
   updateChart();
 }
 document.getElementById('Jetblue').addEventListener('submit', submitBtnJet);
@@ -205,7 +208,9 @@ async function submitBtnJet(e) {
   e.preventDefault();
   const response = await fetch('https://hackathons-1569045593351.appspot.com/jetblue');
   await response.json().then(data => saveTweet(data.tweet, data.screen_name, data.user_name, data.date, data.url, data.analysis, data.airline));
-  updateChart();
+  var jetblueCounter = [0, 0, 0];
+var westjetCounter = [0, 0, 0];
+var aircanadaCounter = [0, 0, 0];updateChart();
 }
 document.getElementById('WestJet').addEventListener('submit', submitBtnWest);
 // Submit Jet
@@ -213,7 +218,9 @@ async function submitBtnWest(e) {
   e.preventDefault();
   const response = await fetch('https://hackathons-1569045593351.appspot.com/westjet');
   await response.json().then(data => saveTweet(data.tweet, data.screen_name, data.user_name, data.date, data.url, data.analysis, data.airline));
-  updateChart();
+  var jetblueCounter = [0, 0, 0];
+var westjetCounter = [0, 0, 0];
+var aircanadaCounter = [0, 0, 0];updateChart();
 }
 document.getElementById('AirCanada').addEventListener('submit', submitBtnAir);
 // Submit Jet
@@ -221,7 +228,9 @@ async function submitBtnAir(e) {
   e.preventDefault();
   const response = await fetch('https://hackathons-1569045593351.appspot.com/aircanada');
   await response.json().then(data => saveTweet(data.tweet, data.screen_name, data.user_name, data.date, data.url, data.analysis, data.airline));
-  updateChart();
+  var jetblueCounter = [0, 0, 0];
+var westjetCounter = [0, 0, 0];
+var aircanadaCounter = [0, 0, 0];updateChart();
 }
 
 // Get form values
@@ -292,7 +301,15 @@ var chart = new Chart(ctx, {
   },
 
   // Configuration options go here
-  options: {}
+  options: {scales: {
+    yAxes: [{
+            display: true,
+            ticks: {
+                beginAtZero: true,
+                stepValue: 5
+            }
+        }]
+}}
 });
 function updateChart(){
   chart.data.datasets[0].data[0] = jetblueCounter[0];
