@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/public/css/bulma.css">
     <link rel="stylesheet" href="/public/css/style.css">
 </head>
-
 <body>
     <nav class="navbar is-link">
         <div class="container">
@@ -49,7 +48,7 @@
             </div>
             <div class="column is-half dash-header">
 
-                    <h1 class="has-text-centered title ">'Good' Sentiments over time</h1>
+                    <h1 class="has-text-centered title ">Sentiments over time</h1>
                     <canvas id="myChart" width="400" height="400"></canvas>
             </div>
             <div class="column is-one-quarter dash-header">
@@ -109,15 +108,17 @@
                     
             </form>
             <div class="container btn-header is-centered">
-                <form>
+                
                     <div class="field is-grouped">
                         <div class="control">
-                            <button type="submit" id="submitBtn" class="button is-link">Jetblue</button>
-                            <button type="submit" id="submitBtn" class="button is-info">WestJet</button>
-                            <button type="submit" id="submitBtn" class="button is-danger">Air Canada</button>
+                                <form id="Jetblue">
+                            <button type="submit" id="submitBtnJetblue" class="button is-link">Jetblue</button>                </form>
+                            <form id="WestJet">
+                            <button type="submit" id="submitBtnWestjet" class="button is-primary">WestJet</button> </form>
+                            <form id="AirCanada">
+                            <button type="submit" id="submitBtnAircanada" class="button is-danger">Air Canada</button></form>
                         </div>
                     </div>
-                </form>
             </div>
             </div>
         </div>
