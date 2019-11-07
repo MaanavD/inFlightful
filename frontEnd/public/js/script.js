@@ -207,7 +207,7 @@ document.getElementById('Jetblue').addEventListener('submit', submitBtnJet);
 // Submit Jet
 async function submitBtnJet(e) {
   e.preventDefault();
-  const response = await fetch('https://hackathons-1569045593351.appspot.com/jetblue');
+  const response = await fetch('https://cors-anywhere.herokuapp.com/https://hackathons-1569045593351.appspot.com/jetblue');
   await response.json().then(data => saveTweet(data.tweet, data.screen_name, data.user_name, data.date, data.url, data.analysis, data.airline));
 
   updateChart();
@@ -216,7 +216,7 @@ document.getElementById('WestJet').addEventListener('submit', submitBtnWest);
 // Submit Jet
 async function submitBtnWest(e) {
   e.preventDefault();
-  const response = await fetch('https://hackathons-1569045593351.appspot.com/westjet');
+  const response = await fetch('https://cors-anywhere.herokuapp.com/https://hackathons-1569045593351.appspot.com/westjet');
   await response.json().then(data => saveTweet(data.tweet, data.screen_name, data.user_name, data.date, data.url, data.analysis, data.airline));
 
   updateChart();
@@ -225,7 +225,7 @@ document.getElementById('AirCanada').addEventListener('submit', submitBtnAir);
 // Submit Jet
 async function submitBtnAir(e) {
   e.preventDefault();
-  const response = await fetch('https://hackathons-1569045593351.appspot.com/aircanada');
+  const response = await fetch('https://cors-anywhere.herokuapp.com/https://hackathons-1569045593351.appspot.com/aircanada');
   await response.json().then(data => saveTweet(data.tweet, data.screen_name, data.user_name, data.date, data.url, data.analysis, data.airline));
 
   updateChart();
@@ -252,7 +252,7 @@ function saveTweet(tweet, screen_name, user_name, date, url, analysis, airline) 
 
 
 async function sendTweet(tweet) {
-  const url = "https://hackathons-1569045593351.appspot.com/sentiment";
+  const url = "https://cors-anywhere.herokuapp.com/https://hackathons-1569045593351.appspot.com/sentiment";
   var jsonTweet = {
     method: 'POST',
     headers: {
@@ -313,7 +313,7 @@ var chart = new Chart(ctx, {
 });
 window.onload = my_function();
 async function my_function(){
-  const response = await fetch('https://hackathons-1569045593351.appspot.com/jetblue');
+  const response = await fetch('https://cors-anywhere.herokuapp.com/https://hackathons-1569045593351.appspot.com/jetblue');
   await response.json().then(data => saveTweet(data.tweet, data.screen_name, data.user_name, data.date, data.url, data.analysis, data.airline));
 
   updateChart();
