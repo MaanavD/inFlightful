@@ -22,9 +22,9 @@ class SentimentAnalyzer():
 
         if response["magnitude"] < 0.075:
             response["sentiment"] = 0
-        elif response["score"] > 0.2:
+        elif response["score"] > 0.1:
             response["sentiment"] = 3
-        elif response["score"] < -0.2:
+        elif response["score"] < -0.1:
             response["sentiment"] = 1
         else:
             response["sentiment"] = 2
